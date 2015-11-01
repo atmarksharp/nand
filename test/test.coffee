@@ -42,7 +42,7 @@ describe 'Nand.STree', ->
       assert.equal 1, bool.value
 
 describe '#parse()', ->
-  it 'and', ->
+  it '(and 0 1)', ->
     doc = Nand.parse('(and 0 1)')
     assert.equal true, doc instanceof Nand.STree.SDoc
 

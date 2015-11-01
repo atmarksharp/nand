@@ -27,6 +27,7 @@
     },
 
     'parse': function(code){
+      // Filters
       var is_id = function(s){
         var re = /^[a-zA-Z_][a-zA-Z_0-9]*$/;
         return (re.test(s));
@@ -41,6 +42,7 @@
       var reg = [];
       var len = code.length;
 
+      // Parsing
       for (var i=0; i < len; ++i){
         var c = code[i];
 
@@ -48,13 +50,11 @@
           reg.push( new Nand.STree.LParen() );
 
         }else if(c === ")"){ // RPAREN
-
           // construct SExpr
           var list = [];
           while(true){
             var last = reg.length-1;
             var e = reg[last];
-
             if(e instanceof Nand.STree.LParen){
               reg.pop();
               reg.push(new Nand.STree.SExpr(list));
@@ -80,6 +80,7 @@
 
         }else if(is_blank(c)){ // BLANK
           continue; //skip
+          
         }else{
           return null;
         }
