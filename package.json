@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node_modules/.bin/supervisor app",
-    "test": "node_modules/.bin/mocha -w"
+    "test": "node_modules/.bin/mocha test.js"
   },
   "devDependencies": {
     "mocha": "2.3.3",
