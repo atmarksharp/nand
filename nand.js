@@ -98,12 +98,6 @@
   Nand.STree.SExpr.prototype.get = function(i){
     return this.list[i];
   };
-  Nand.STree.SExpr.prototype.set = function(i,v){
-    return this.list[i] = v;
-  };
-  Nand.STree.SExpr.prototype.add = function(v){
-    return this.list.push(v);
-  };
   // SRoot
   Nand.STree.SRoot.prototype.get = function(i){
     return this.list[i];
