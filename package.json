@@ -1,10 +1,16 @@
 {
-  "scripts": {
-    "start": "node_modules/.bin/supervisor app",
-    "test": "node_modules/.bin/mocha test.js"
+  "name": "nand",
+  "version": "0.0.1",
+  "dependencies": {
   },
   "devDependencies": {
     "mocha": "2.3.3",
     "should": ">= 0.0.1"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "engines": {
+    "node": "4.1.2"
   }
 }
