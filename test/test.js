@@ -52,11 +52,14 @@ describe("#parse()", function(){
     assert.equal(true, doc instanceof Nand.STree.SRoot);
 
     var e = doc.get(0);
-    console.log(e);
+    // console.log(e);
     assert.equal(true, e instanceof Nand.STree.SExpr);
     assert.equal(true, e.get(0) instanceof Nand.STree.Id);
+    assert.equal("and", e.get(0).name);
     assert.equal(true, e.get(1) instanceof Nand.STree.Bool);
+    assert.equal(0, e.get(1).value);
     assert.equal(true, e.get(2) instanceof Nand.STree.Bool);
+    assert.equal(1, e.get(2).value);
   });
 });
 
