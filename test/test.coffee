@@ -8,7 +8,7 @@ describe 'Nand.STree', ->
       assert.equal 'object', typeof e
       assert.equal 'function', typeof e.get
       assert.equal 'object', typeof e.list
-      assert.equal 0, e.list.length
+      assert.equal 0, e.length
 
     it '#init(), #get() and #length', ->
       e = new (Nand.STree.SExpr)
