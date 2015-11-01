@@ -1,19 +1,15 @@
 Nand = require('../nand.js')
-test = require('unit.js');
-should = test.should;
-object = test.object;
+should = require('should')
 
 describe 'Nand.STree', ->
   describe 'SExpr', ->
     it 'new SExpr()', ->
       e = new Nand.STree.SExpr()
-      object(e)
-        .hasProperty('get')
-        .hasProperty('list')
-        .hasProperty('length')
+      should( e ).have
+        .property('get').and
+        .property('length')
 
       should( e.get ).be.Function
-      should( e.list ).be.Array
       should( e.length ).be.Number
       should( e.length ).equal( 0 )
 
@@ -26,9 +22,9 @@ describe 'Nand.STree', ->
   describe 'SDoc', ->
     it '#list, #length', ->
       doc = new Nand.STree.SDoc(["a","b"])
-      object( doc )
-        .hasProperty('get')
-        .hasProperty('length')
+      should( doc ).have
+        .property('get').and
+        .property('length')
 
       should( doc.length ).equal( 2 )
       should( doc.get(0) ).equal( "a" )
@@ -42,26 +38,26 @@ describe 'Nand.STree', ->
   describe 'Id', ->
     it '#name()', ->
       id = new Nand.STree.Id("and");
-      object( id ).hasProperty('name');
+      should( id ).have.property('name');
       should( id.name ).equal( 'and' )
 
   describe 'Bool', ->
     it '#value', ->
       bool = new Nand.STree.Bool(1);
-      object( bool ).hasProperty('value')
+      should( bool ).have.property('value')
       should( bool.value ).equal( 1 )
 
 describe '#parse()', ->
   it '(and 0 1)', ->
     doc = Nand.parse('(and 0 1)')
-    should( doc instanceof Nand.STree.SDoc ).be.ok
+    should( doc ).be.instanceof( Nand.STree.SDoc )
 
     e = doc.get(0)
-    should( e instanceof Nand.STree.SExpr ).be.ok
+    should( e ).be.instanceof( Nand.STree.SExpr )
     should( e.length ).equal( 3 )
-    should( e.get(0) instanceof Nand.STree.Id ).be.ok
-    should( e.get(1) instanceof Nand.STree.Bool ).be.ok
-    should( e.get(2) instanceof Nand.STree.Bool ).be.ok
+    should( e.get(0) ).be.instanceof( Nand.STree.Id )
+    should( e.get(1) ).be.instanceof( Nand.STree.Bool )
+    should( e.get(2) ).be.instanceof( Nand.STree.Bool )
     should( e.get(0).name ).equal( 'and' )
     should( e.get(1).value ).equal( 0 )
     should( e.get(2).value ).equal( 1 )
@@ -69,7 +65,7 @@ describe '#parse()', ->
 describe "#interpret()", ->
   it "(and 0 1)", ->
     result = Nand.interpret("(and 0 1)")
-    should( result instanceof Nand.STree.Bool ).be.ok
+    should( result ).be.instanceof( Nand.STree.Bool )
     should( result.value ).equal( 0 )
 
 describe "#eval()", ->
@@ -83,10 +79,10 @@ describe "#eval()", ->
     should( and_10 ).be.Object
     should( and_01 ).be.Object
     should( and_11 ).be.Object
-    should( and_00 instanceof Bool ).be.ok
-    should( and_10 instanceof Bool ).be.ok
-    should( and_01 instanceof Bool ).be.ok
-    should( and_11 instanceof Bool ).be.ok
+    should( and_00 ).be.instanceof( Nand.STree.Bool )
+    should( and_10 ).be.instanceof( Nand.STree.Bool )
+    should( and_01 ).be.instanceof( Nand.STree.Bool )
+    should( and_11 ).be.instanceof( Nand.STree.Bool )
     should( and_00.value ).equal( 0 )
     should( and_10.value ).equal( 0 )
     should( and_01.value ).equal( 0 )
