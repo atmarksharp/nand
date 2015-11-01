@@ -7,10 +7,12 @@
     'STree': {
       'SDoc': function(list){
         this.list = list || [];
+        this.length = this.list.length;
         this.type = "SDoc";
       },
       'SExpr': function(list){
         this.list = list || [];
+        this.length = this.list.length;
         this.type = "SExpr";
       },
       'LParen': function(){
@@ -105,7 +107,7 @@
   Nand.STree.SExpr.prototype.get = function(i){
     return this.list[i];
   };
-  // SRoot
+  // SDoc
   Nand.STree.SDoc.prototype.get = function(i){
     return this.list[i];
   };

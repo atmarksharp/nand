@@ -10,34 +10,34 @@ describe 'Nand.STree', ->
       assert.equal 'object', typeof e.list
       assert.equal 0, e.list.length
 
-    it '#init() and #get()', ->
+    it '#init(), #get() and #length', ->
       e = new (Nand.STree.SExpr)
       assert.equal null, e.get(0)
 
       e2 = new (Nand.STree.SExpr)(['foo','bar'])
-      assert.equal 2, e2.list.length
+      assert.equal 2, e2.length
       assert.equal 'foo', e2.get(0)
       assert.equal 'bar', e2.get(1)
 
   describe 'SDoc', ->
-    it 'list', ->
+    it '#list, #length', ->
       doc = new Nand.STree.SDoc(["a","b"])
-      assert.equal 2, doc.list.length
+      assert.equal 2, doc.length
       assert.equal "a", doc.get(0)
       assert.equal "b", doc.get(1)
 
   describe 'LParen', ->
-    it 'init', ->
+    it '#init()', ->
       lp = new Nand.STree.LParen()
       assert.equal 'object', typeof lp
 
   describe 'Id', ->
-    it 'name', ->
+    it '#name()', ->
       id = new Nand.STree.Id("and");
       assert.equal 'and', id.name
 
   describe 'Bool', ->
-    it 'value', ->
+    it '#value', ->
       bool = new Nand.STree.Bool(1);
       assert.equal 1, bool.value
 
