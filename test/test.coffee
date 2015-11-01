@@ -62,7 +62,7 @@ describe "#interpret()", ->
   it "(and 0 1)", ->
     result = Nand.interpret("(and 0 1)")
     assert.equal true, result instanceof Nand.STree.Bool
-    assert.equal "0", result.value
+    assert.equal 0, result.value
 
 # describe "#eval()", ->
 #   it "(and * *)", ->
