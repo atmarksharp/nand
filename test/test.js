@@ -1,6 +1,6 @@
 #!/usr/bin/env mocha
 
-var Nand = require("./nand.js");
+var Nand = require("../nand.js");
 var assert = require('assert');
 
 describe("SExp", function(){
