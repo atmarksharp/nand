@@ -90,14 +90,22 @@
       return new Nand.STree.SDoc(reg); // End of #parse
     },
 
-    'interpret': function(code){
-      var sdoc = Nand.parse(code);
+    'interpret': function(e){
+      if(e instanceof Nand.STree.SDoc){
+        for (var i=0; i<e.length; i++) {
+          var item = e[i];
 
-      return result;
+        }
+      }else if(e instanceof Nand.STree.SExpr){
+
+      }else{
+        return e;
+      }
     },
 
     'eval': function(code){
-      var sdoc = Nand.interpret(code);
+      var sdoc = Nand.parse(code);
+      var result = Nand.interpret(sdoc);
     }
   };
 
