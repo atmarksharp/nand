@@ -80,7 +80,7 @@
 
         }else if(is_blank(c)){ // BLANK
           continue; //skip
-          
+
         }else{
           return null;
         }
@@ -88,8 +88,14 @@
       return new Nand.STree.SDoc(reg); // End of #parse
     },
 
+    'interpret': function(code){
+      var sdoc = Nand.parse(code);
+
+      return result;
+    },
+
     'eval': function(code){
-      var tree = Nand.parse(code);
+      var sdoc = Nand.interpret(code);
     }
   };
 

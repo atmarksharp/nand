@@ -58,11 +58,15 @@ describe '#parse()', ->
     assert.equal 0, e.get(1).value
     assert.equal 1, e.get(2).value
 
-# describe("#eval()", function(){
-#   it("and", function(){
-#     assert.equal("0", Nand.eval("(and 0 0)"));
-#     assert.equal("0", Nand.eval("(and 1 0)"));
-#     assert.equal("0", Nand.eval("(and 0 1)"));
-#     assert.equal("1", Nand.eval("(and 1 1)"));
-#   });
-# });
+describe "#interpret()", ->
+  it "(and 0 1)", ->
+    result = Nand.interpret("(and 0 1)")
+    assert.equal true, result instanceof Nand.STree.Bool
+    assert.equal "0", result.value
+
+# describe "#eval()", ->
+#   it "(and * *)", ->
+#     assert.equal "0", Nand.eval("(and 0 0)")
+#     assert.equal "0", Nand.eval("(and 1 0)")
+#     assert.equal "0", Nand.eval("(and 0 1)")
+#     assert.equal "1", Nand.eval("(and 1 1)")
