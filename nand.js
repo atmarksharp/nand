@@ -5,7 +5,7 @@
   // Nand Class
   var Nand = {
     'STree': {
-      'SRoot': function(list){
+      'SDoc': function(list){
         this.list = list || [];
         this.type = "SDoc";
       },
@@ -84,7 +84,7 @@
           return null;
         }
       }
-      return new Nand.STree.SRoot(reg); // End of #parse
+      return new Nand.STree.SDoc(reg); // End of #parse
     },
 
     'eval': function(code){
@@ -99,7 +99,7 @@
     return this.list[i];
   };
   // SRoot
-  Nand.STree.SRoot.prototype.get = function(i){
+  Nand.STree.SDoc.prototype.get = function(i){
     return this.list[i];
   };
 

@@ -20,17 +20,31 @@ describe 'Nand.STree', ->
       assert.equal 'bar', e2.get(1)
 
   describe 'SDoc', ->
+    it 'list', ->
+      doc = new Nand.STree.SDoc(["a","b"])
+      assert.equal 2, doc.list.length
+      assert.equal "a", doc.get(0)
+      assert.equal "b", doc.get(1)
+
   describe 'LParen', ->
     it 'init', ->
       lp = new Nand.STree.LParen()
       assert.equal 'object', typeof lp
+
   describe 'Id', ->
+    it 'name', ->
+      id = new Nand.STree.Id("and");
+      assert.equal 'and', id.name
+
   describe 'Bool', ->
+    it 'value', ->
+      bool = new Nand.STree.Bool(1);
+      assert.equal 1, bool.value
 
 describe '#parse()', ->
   it 'and', ->
     doc = Nand.parse('(and 0 1)')
-    assert.equal true, doc instanceof Nand.STree.SRoot
+    assert.equal true, doc instanceof Nand.STree.SDoc
 
     e = doc.get(0)
     # console.log(e);
