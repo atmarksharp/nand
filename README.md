@@ -7,5 +7,5 @@
 ```bash
 nvm install 4.1
 npm install
-mocha test.js
+npm test
 ```
