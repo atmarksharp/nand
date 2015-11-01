@@ -6,8 +6,7 @@ describe 'Nand.STree', ->
     it 'new SExpr()', ->
       e = new Nand.STree.SExpr()
       should( e ).have
-        .property('get').and
-        .property('length')
+        .properties('get','length')
 
       should( e.get ).be.Function
       should( e.length ).be.Number
@@ -23,8 +22,7 @@ describe 'Nand.STree', ->
     it '#list, #length', ->
       doc = new Nand.STree.SDoc(["a","b"])
       should( doc ).have
-        .property('get').and
-        .property('length')
+        .properties('get','length')
 
       should( doc.length ).equal( 2 )
       should( doc.get(0) ).equal( "a" )
@@ -79,10 +77,12 @@ describe "#eval()", ->
     should( and_10 ).be.Object
     should( and_01 ).be.Object
     should( and_11 ).be.Object
+
     should( and_00 ).be.instanceof( Nand.STree.Bool )
     should( and_10 ).be.instanceof( Nand.STree.Bool )
     should( and_01 ).be.instanceof( Nand.STree.Bool )
     should( and_11 ).be.instanceof( Nand.STree.Bool )
+
     should( and_00.value ).equal( 0 )
     should( and_10.value ).equal( 0 )
     should( and_01.value ).equal( 0 )
