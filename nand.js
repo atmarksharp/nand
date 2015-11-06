@@ -29,5 +29,4 @@
     module.exports = Nand;
   }
   app['Nand'] = Nand;
-
 })();
