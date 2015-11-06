@@ -1,6 +1,6 @@
 # nand
 
-[![Build Status](https://travis-ci.org/atmarksharp/nand.svg?branch=master)](https://travis-ci.org/atmarksharp/nand)
+[![Build Status](https://travis-ci.org/atmarksharp/nand.svg?branch=nand-lang)](https://travis-ci.org/atmarksharp/nand?branch=nand-lang)
 
 ## Test
 
