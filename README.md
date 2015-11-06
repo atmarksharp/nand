@@ -1,6 +1,6 @@
 # nand.js
 
-Logical operation library, such as `and`, `or`, `not`, `nand`, `nor`, `xor`.
+Logical operation library which has methods like `and`, `or`, `not`, `nand`, `nor`, `xor`.
 
 [![Build Status](https://travis-ci.org/atmarksharp/nand.svg?branch=master)](https://travis-ci.org/atmarksharp/nand?branch=master)
 
